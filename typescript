@@ -1,0 +1,334 @@
+Script started on Tue Apr 25 13:47:06 2023
+]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM]2;hugofugeray@MacBook-Pro-2]1;..sktop/API_CRM]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM[0m[27m[24m[J(base) [01;32m➜  [36mAPI_CRM[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[1m[31mc[0m[39m[0m[32mc[32md[39m [4ms[24m[4ms[4mc[24m[4mc[4mr[24m[4mr[4mi[24m[4mi[4mp[24m[4mp[4mt[24m[?1l>[?2004l
+]2;cd script]1;cd[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script]2;hugofugeray@MacBook-Pro-2]1;..PI_CRM/script]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script[0m[27m[24m[J(base) [01;32m➜  [36mscript[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[32ml[39m[32ml[32ms[39m[?1l>[?2004l
+]2;ls -G]1;lsapi.py      untitled.py
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script]2;hugofugeray@MacBook-Pro-2]1;..PI_CRM/script]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script[0m[27m[24m[J(base) [01;32m➜  [36mscript[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[1m[31mu[0m[39m[1m[31mu[1m[31mv[0m[39m[1m[31mu[1m[31mv[1m[31mi[0m[39m[1m[31mi[1m[31mc[0m[39m[1m[31mc[1m[31mo[0m[39m[1m[31mo[1m[31mr[0m[39m[0m[32mu[0m[32mv[0m[32mi[0m[32mc[0m[32mo[0m[32mr[32mn[39m 
+[J[0mapi.py       [Juntitled.py[J[A[0m[27m[24m[30C[32muvicorn[39m[K[1C--app [4ma[24m[4ma[4mp[24m[4mp[4mi[24m[24ma[24mp[24mi:[4ma[4mp[4mi[24m [4mp[24m[24m [4ma[24m[24m [24m [4ma[24m[4ma[4mp[24m[24ma[24mpp:api    [4ma[4mp[24m [4ma[24m[24m [24m [4ma[24m[4ma[4mp[24m[4mp[4mi[24m[24ma[24mp[24mi:app[?1l>[?2004l
+[J]2;uvicorn --app api:app]1;uvicornUsage: uvicorn [OPTIONS] APP
+Try 'uvicorn --help' for help.
+
+Error: no such option: --app  Did you mean --app-dir?
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script]2;hugofugeray@MacBook-Pro-2]1;..PI_CRM/script]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script[0m[27m[24m[J(base) [01;31m➜  [36mscript[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[32muvicorn[39m --app api:app api:app [9D api:app [9D api:app [9D api:app [9D api:app [9Dapi:app [9D[1C[1C[1C[1C[1C[1C[1C[1C --reload[?1l>[?2004l
+]2;uvicorn api:app --reload]1;uvicorn[32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     Started reloader process [[36m[1m2512[0m] using [36m[1mstatreload[0m
+[32mINFO[0m:     Started server process [[36m2514[0m]
+[32mINFO[0m:     Waiting for application startup.
+[32mINFO[0m:     Application startup complete.
+[32mINFO[0m:     127.0.0.1:49677 - "[1mGET / HTTP/1.1[0m" [31m404 Not Found[0m
+[32mINFO[0m:     127.0.0.1:49677 - "[1mGET /favicon.ico HTTP/1.1[0m" [31m404 Not Found[0m
+[32mINFO[0m:     127.0.0.1:49678 - "[1mGET /docs HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49678 - "[1mGET /openapi.json HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49679 - "[1mGET /users/me HTTP/1.1[0m" [31m403 Forbidden[0m
+[33mWARNING[0m:  StatReload detected file change in 'api.py'. Reloading...
+[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.
+[32mINFO[0m:     Finished server process [[36m2514[0m]
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/Users/hugofugeray/anaconda/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/Users/hugofugeray/anaconda/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/server.py", line 50, in run
+    loop.run_until_complete(self.serve(sockets=sockets))
+  File "/Users/hugofugeray/anaconda/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/server.py", line 57, in serve
+    config.load()
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/config.py", line 318, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/importer.py", line 22, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./api.py", line 27, in <module>
+    print(create_token())
+TypeError: create_token() missing 1 required positional argument: 'user_id'
+[33mWARNING[0m:  StatReload detected file change in 'api.py'. Reloading...
+[32mINFO[0m:     Started server process [[36m2745[0m]
+[32mINFO[0m:     Waiting for application startup.
+[32mINFO[0m:     Application startup complete.
+[32mINFO[0m:     127.0.0.1:49723 - "[1mGET /docs HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49723 - "[1mGET /openapi.json HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49723 - "[1mGET /users/me HTTP/1.1[0m" [31m403 Forbidden[0m
+[32mINFO[0m:     127.0.0.1:49745 - "[1mGET /users/me HTTP/1.1[0m" [31m403 Forbidden[0m
+[33mWARNING[0m:  StatReload detected file change in 'api.py'. Reloading...
+[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.
+[32mINFO[0m:     Finished server process [[36m2745[0m]
+[32mINFO[0m:     Started server process [[36m3135[0m]
+[32mINFO[0m:     Waiting for application startup.
+[32mINFO[0m:     Application startup complete.
+[32mINFO[0m:     127.0.0.1:49747 - "[1mGET /docs HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49747 - "[1mGET /openapi.json HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49747 - "[1mGET /users/me HTTP/1.1[0m" [31m403 Forbidden[0m
+[33mWARNING[0m:  StatReload detected file change in 'api.py'. Reloading...
+[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.
+[32mINFO[0m:     Finished server process [[36m3135[0m]
+[32mINFO[0m:     Started server process [[36m3244[0m]
+[32mINFO[0m:     Waiting for application startup.
+[32mINFO[0m:     Application startup complete.
+^C[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.
+[32mINFO[0m:     Finished server process [[36m3244[0m]
+[32mINFO[0m:     Stopping reloader process [[36m[1m2512[0m]
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script]2;hugofugeray@MacBook-Pro-2]1;..PI_CRM/script]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script[0m[27m[24m[J(base) [01;32m➜  [36mscript[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[32mp[39m[1m[31mp[1m[31my[0m[39m[1m[31mp[1m[31my[1m[31mt[0m[39m[1m[31mt[1m[31mh[0m[39m[1m[31mh[1m[31mo[0m[39m[0m[32mp[0m[32my[0m[32mt[0m[32mh[0m[32mo[32mn[39m[32mn[32m3[39m [4ma[24m[4ma[4mp[24m[4mp[4mi[24m[4mi[4m.py[24m[1m [0m[1m [1m`[0m[0m [0m [?1l>[?2004l
+]2;python3 api.py]1;python3Traceback (most recent call last):
+  File "api.py", line 34, in <module>
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+NameError: name 'uvicorn' is not defined
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script]2;hugofugeray@MacBook-Pro-2]1;..PI_CRM/script]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script[0m[27m[24m[J(base) [01;31m➜  [36mscript[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[32mpython3[39m [4mapi.py[24m [?1l>[?2004l
+]2;python3 api.py]1;python3[32mINFO[0m:     Started server process [[36m3305[0m]
+[32mINFO[0m:     Waiting for application startup.
+[32mINFO[0m:     Application startup complete.
+[32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     127.0.0.1:49751 - "[1mGET /docs HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49751 - "[1mGET /openapi.json HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49752 - "[1mGET /swagger-data HTTP/1.1[0m" [31m401 Unauthorized[0m
+[32mINFO[0m:     127.0.0.1:49752 - "[1mGET /swagger-data HTTP/1.1[0m" [31m401 Unauthorized[0m
+^C[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.
+[32mINFO[0m:     Finished server process [[36m3305[0m]
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script]2;hugofugeray@MacBook-Pro-2]1;..PI_CRM/script]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script[0m[27m[24m[J(base) [01;32m➜  [36mscript[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[32mpython3[39m [4mapi.py[24m [?1l>[?2004l
+]2;python3 api.py]1;python3Traceback (most recent call last):
+  File "api.py", line 71, in <module>
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+NameError: name 'uvicorn' is not defined
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script]2;hugofugeray@MacBook-Pro-2]1;..PI_CRM/script]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script[0m[27m[24m[J(base) [01;31m➜  [36mscript[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[32mpython3[39m [4mapi.py[24m [?1l>[?2004l
+]2;python3 api.py]1;python3[32mINFO[0m:     Started server process [[36m3401[0m]
+[32mINFO[0m:     Waiting for application startup.
+[32mINFO[0m:     Application startup complete.
+[32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     127.0.0.1:49758 - "[1mGET /docs HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49758 - "[1mGET /openapi.json HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49759 - "[1mPOST /login?username=password123&password=password456 HTTP/1.1[0m" [31m401 Unauthorized[0m
+[32mINFO[0m:     127.0.0.1:49760 - "[1mPOST /login?username=jane&password=password456 HTTP/1.1[0m" [91m500 Internal Server Error[0m
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 369, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 59, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 580, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 241, in handle
+    await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 52, in app
+    response = await func(request)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 214, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 149, in run_endpoint_function
+    return await dependant.call(**values)
+  File "api.py", line 45, in login
+    token = generate_token(username)
+  File "api.py", line 35, in generate_token
+    return token.decode()
+AttributeError: 'str' object has no attribute 'decode'
+[32mINFO[0m:     127.0.0.1:49761 - "[1mPOST /login?username=jane&password=password456 HTTP/1.1[0m" [91m500 Internal Server Error[0m
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 369, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 59, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 580, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 241, in handle
+    await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 52, in app
+    response = await func(request)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 214, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 149, in run_endpoint_function
+    return await dependant.call(**values)
+  File "api.py", line 45, in login
+    token = generate_token(username)
+  File "api.py", line 35, in generate_token
+    return token.decode()
+AttributeError: 'str' object has no attribute 'decode'
+[32mINFO[0m:     127.0.0.1:49762 - "[1mPOST /login?username=jane&password=password456 HTTP/1.1[0m" [91m500 Internal Server Error[0m
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 369, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 59, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 580, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 241, in handle
+    await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 52, in app
+    response = await func(request)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 214, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 149, in run_endpoint_function
+    return await dependant.call(**values)
+  File "api.py", line 45, in login
+    token = generate_token(username)
+  File "api.py", line 35, in generate_token
+    return token.decode()
+AttributeError: 'str' object has no attribute 'decode'
+[32mINFO[0m:     127.0.0.1:49763 - "[1mPOST /login?username=jane&password=password456 HTTP/1.1[0m" [91m500 Internal Server Error[0m
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 369, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 59, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 580, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 241, in handle
+    await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 52, in app
+    response = await func(request)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 214, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 149, in run_endpoint_function
+    return await dependant.call(**values)
+  File "api.py", line 45, in login
+    token = generate_token(username)
+  File "api.py", line 35, in generate_token
+    return token.decode()
+AttributeError: 'str' object has no attribute 'decode'
+[32mINFO[0m:     127.0.0.1:49764 - "[1mPOST /login?username=jane&password=password456 HTTP/1.1[0m" [91m500 Internal Server Error[0m
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 369, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 59, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 580, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 241, in handle
+    await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 52, in app
+    response = await func(request)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 214, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 149, in run_endpoint_function
+    return await dependant.call(**values)
+  File "api.py", line 45, in login
+    token = generate_token(username)
+  File "api.py", line 35, in generate_token
+    return token.decode()
+AttributeError: 'str' object has no attribute 'decode'
+[32mINFO[0m:     127.0.0.1:49765 - "[1mGET /docs HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49765 - "[1mGET /openapi.json HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49766 - "[1mPOST /login?username=john&password=password123 HTTP/1.1[0m" [91m500 Internal Server Error[0m
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 369, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 59, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 580, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 241, in handle
+    await self.app(scope, receive, send)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/starlette/routing.py", line 52, in app
+    response = await func(request)
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 214, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/hugofugeray/anaconda/lib/python3.8/site-packages/fastapi/routing.py", line 149, in run_endpoint_function
+    return await dependant.call(**values)
+  File "api.py", line 45, in login
+    token = generate_token(username)
+  File "api.py", line 35, in generate_token
+    return token
+AttributeError: 'str' object has no attribute 'decode'
+^Z
+[1]  + 3401 suspended  python3 api.py
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script]2;hugofugeray@MacBook-Pro-2]1;..PI_CRM/script]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script[0m[27m[24m[J(base) [01;31m➜  [36mscript[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[32mpython3[39m [4mapi.py[24m [?1l>[?2004l
+]2;python3 api.py]1;python3[32mINFO[0m:     Started server process [[36m3474[0m]
+[32mINFO[0m:     Waiting for application startup.
+[32mINFO[0m:     Application startup complete.
+[31mERROR[0m:    [Errno 48] error while attempting to bind on address ('0.0.0.0', 8000): address already in use
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script]2;hugofugeray@MacBook-Pro-2]1;..PI_CRM/script]7;file://MacBook-Pro-2.local/Users/hugofugeray/Desktop/API_CRM/script[0m[27m[24m[J(base) [01;31m➜  [36mscript[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h
