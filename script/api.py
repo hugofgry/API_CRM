@@ -2,7 +2,6 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from datetime import datetime, timedelta
 import jwt
-import uvicorn
 import db
 
 app = FastAPI()
@@ -81,6 +80,3 @@ async def protected_data(credentials: HTTPAuthorizationCredentials = Depends(sec
     except jwt.JWTError:
         raise HTTPException(status_code=401, detail="Jeton d'authentification invalide")
 
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
