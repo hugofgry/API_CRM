@@ -1,4 +1,5 @@
 import psycopg2 as psy
+from datetime import datetime, timedelta
 
 def set_connection():
   connection = psy.connect('postgres://testneon33:dfkFh5jcr1Tw@ep-hidden-forest-997741.eu-central-1.aws.neon.tech/neondb')
@@ -31,11 +32,12 @@ def get_user_pwd_and_token(user_name):
 
 def insert_admin_user(username, pwd, role):
   connection, cursor = set_connection()
-  user = (username, pwd, role, token, datetime.datetime.now())
+  token = generate_token("username")
+  user = (username, pwd, role, token, datetime.now())
   cursor.execute(
   """
-  INSERT INTO Users (username, pwd, 3, token, create_at)
-  VALUES (%s, %s, %s, %s, %s),user
+  INSERT INTO Users (username, pwd, user_role, user_token, create_at)
+  VALUES (%s, %s, %s, %s, %s)
   """,
   user
   )

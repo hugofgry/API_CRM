@@ -50,36 +50,36 @@ async def login(username: str, password: str, token: str):
 
      return "access to API ok"
 
-# @app.post("/create_user")
-# async def create_user(username: str, password: str, role: str):
+@app.post("/create_user")
+async def create_user(username: str, password: str, role: str):
 
-#     # Générer un jeton pour l'utilisateur
-#     token = generate_token(username)
+    # Générer un jeton pour l'utilisateur
+    token = generate_token(username)
 
-#     # Insérer l'user dans la db
-#     db.insert(username, password, role, token)
+    # Insérer l'user dans la db
+    db.insert(username, password, role, token)
 
 
-# # Endpoint protégé par un jeton
-# @app.get("/data")
-# async def protected_data(credentials: HTTPAuthorizationCredentials = Depends(security)):
-#     try:
-#         # Extraire le jeton JWT de l'en-tête d'autorisation
-#         token = credentials.credentials
+# Endpoint protégé par un jeton
+@app.get("/data")
+async def protected_data(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    try:
+        # Extraire le jeton JWT de l'en-tête d'autorisation
+        token = credentials.credentials
 
-#         # Décoder et vérifier le jeton JWT
-#         payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+        # Décoder et vérifier le jeton JWT
+        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
 
-#         # Vérifier que le jeton n'a pas expiré
-#         expiration = datetime.fromtimestamp(payload["exp"])
-#         if datetime.utcnow() > expiration:
-#             raise HTTPException(status_code=401, detail="Le jeton d'authentification a expiré")
+        # Vérifier que le jeton n'a pas expiré
+        expiration = datetime.fromtimestamp(payload["exp"])
+        if datetime.utcnow() > expiration:
+            raise HTTPException(status_code=401, detail="Le jeton d'authentification a expiré")
 
-#         # Renvoyer les données protégées
-#         return {"data": "Ceci sont des données protégées!"}
+        # Renvoyer les données protégées
+        return {"data": "Ceci sont des données protégées!"}
 
-#     except jwt.JWTError:
-#         raise HTTPException(status_code=401, detail="Jeton d'authentification invalide")
+    except jwt.JWTError:
+        raise HTTPException(status_code=401, detail="Jeton d'authentification invalide")
 
 
 if __name__ == "__main__":
