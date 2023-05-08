@@ -12,7 +12,6 @@ from secure import TokenData
 app = FastAPI()
 security = HTTPBearer()
 
-# Vos informations d'identification d'utilisateur, stockées dans un dictionnaire
 
 def api(url_api,way):
 

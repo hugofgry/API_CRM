@@ -14,21 +14,17 @@ class TokenData(BaseModel):
 
 
 # Clé secrète pour signer les jetons JWT
-SECRET_KEY = os.environ['JWT_SECRET_KEY']
-print("secret key lu sur heroku : " + SECRET_KEY)
+# SECRET_KEY = os.environ['JWT_SECRET_KEY']
+
+SECRET_KEY = "7064408cc833249f9a56d058771a24a00da14e1f90169e5ed5ee5b8ce2a888df"
 print("secret key utilise pour encoder : 7064408cc833249f9a56d058771a24a00da14e1f90169e5ed5ee5b8ce2a888df")
 
 
 
-# Durée de validité du jeton (nous utilisons timedelta pour que nous puissions facilement ajouter ou soustraire du temps)
-TOKEN_EXPIRATION_TIME = timedelta(days=7)
-
 def generate_token(username: str) -> str:
-    # Définir la date d'expiration du jeton
-    expiration = datetime.utcnow() + TOKEN_EXPIRATION_TIME
 
     # Créer la charge utile pour le jeton JWT (nous incluons le nom d'utilisateur et la date d'expiration)
-    payload = {"sub": username, "exp": expiration}
+    payload = {"sub": username}
 
     # Créer le jeton JWT en signant la charge utile avec la clé secrète
     token = pyjwt.encode(payload, SECRET_KEY, algorithm="HS256")
@@ -69,7 +65,6 @@ def verify_pwd(user_pwd: str, hashed_pwd: str) -> bool:
         return True
     except:
         return False
-
 
 
 
