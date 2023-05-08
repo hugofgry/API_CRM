@@ -3,8 +3,6 @@ datetime
 jwt
 argon2
 pydantic
-jwt.exceptions
-jwt.exceptions
 fastapi
 fastapi.security
 requests
