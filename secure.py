@@ -12,7 +12,7 @@ class TokenData(BaseModel):
 
 
 # Clé secrète pour signer les jetons JWT
-SECRET_KEY = os.environ['JWT_SECRET_KEY']
+SECRET_KEY = ""
 
 # Durée de validité du jeton (nous utilisons timedelta pour que nous puissions facilement ajouter ou soustraire du temps)
 TOKEN_EXPIRATION_TIME = timedelta(days=7)
@@ -25,7 +25,7 @@ def generate_token(username: str) -> str:
     payload = {"sub": username, "exp": expiration}
 
     # Créer le jeton JWT en signant la charge utile avec la clé secrète
-    token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+    token = pyjwt.encode(payload, SECRET_KEY, algorithm="HS256")
 
     # Retourner le jeton en tant que chaîne de caractères
     return token
@@ -47,15 +47,7 @@ def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
 
       return token_data
 
-  except pyjwt.exceptions.ExpiredSignatureError:
-
-    raise HTTPException(status_code=401, detail="JWT token has expired")
-
-  except pyjwt.exceptions.InvalidSignatureError:
-
-    raise HTTPException(status_code=401, detail="Invalid JWT signature")
-
-  except pyjwt.PyJWTError:
+    except:
 
     raise HTTPException(status_code=401, detail="Invalid JWT token")
 
