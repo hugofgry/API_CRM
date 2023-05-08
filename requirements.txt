@@ -2,8 +2,8 @@ psycopg2
 datetime
 jwt
 argon2
-pydantic
+pydantic 
 fastapi
 fastapi.security
 requests
-python
+dns-python
