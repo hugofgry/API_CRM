@@ -2,7 +2,6 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from datetime import datetime, timedelta
 import secure
-import jwt
 import requests
 from secure import TokenData
 
