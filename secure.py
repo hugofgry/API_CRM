@@ -11,8 +11,14 @@ class TokenData(BaseModel):
 
 
 
+
+
 # Clé secrète pour signer les jetons JWT
 SECRET_KEY = os.environ['JWT_SECRET_KEY']
+print("secret key lu sur heroku : " + SECRET_KEY)
+print("secret key utilise pour encoder : 7064408cc833249f9a56d058771a24a00da14e1f90169e5ed5ee5b8ce2a888df")
+
+
 
 # Durée de validité du jeton (nous utilisons timedelta pour que nous puissions facilement ajouter ou soustraire du temps)
 TOKEN_EXPIRATION_TIME = timedelta(days=7)
