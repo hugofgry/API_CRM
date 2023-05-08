@@ -6,4 +6,4 @@ pydantic
 fastapi
 fastapi.security
 requests
-dns-python
+python
