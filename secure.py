@@ -1,10 +1,7 @@
 import argon2
 import jwt as pyjwt
-import jwt
 from pydantic import BaseModel
 from datetime import datetime, timedelta
-from jwt.exceptions import ExpiredSignatureError
-from jwt.exceptions import InvalidSignatureError
 from fastapi import FastAPI, Depends, HTTPException, Header
 
 class TokenData(BaseModel):
@@ -46,11 +43,11 @@ def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
 
       return token_data
 
-  except ExpiredSignatureError:
+  except pyjwt.exceptions.ExpiredSignatureError:
 
     raise HTTPException(status_code=401, detail="JWT token has expired")
 
-  except InvalidSignatureError:
+  except pyjwt.exceptions.InvalidSignatureError:
 
     raise HTTPException(status_code=401, detail="Invalid JWT signature")
 
