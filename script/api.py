@@ -1,40 +1,24 @@
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from datetime import datetime, timedelta
+import secure
 import jwt
-import db
+import requests
+from secure import TokenData
+
+
+
 
 app = FastAPI()
 security = HTTPBearer()
 
 # Vos informations d'identification d'utilisateur, stockées dans un dictionnaire
-users_db = {
-    "john": "password123",
-    "jane": "password456"
-}
 
-# Clé secrète pour signer les jetons JWT
-SECRET_KEY = "votre_clé_secrète"
+def api(url_api,way):
 
-# Durée de validité du jeton (nous utilisons timedelta pour que nous puissions facilement ajouter ou soustraire du temps)
-TOKEN_EXPIRATION_TIME = timedelta(days=7)
-
-
-# Fonction pour générer un jeton JWT valide pour l'utilisateur donné
-def generate_token(username: str) -> str:
-    # Définir la date d'expiration du jeton
-    expiration = datetime.utcnow() + TOKEN_EXPIRATION_TIME
-
-    # Créer la charge utile pour le jeton JWT (nous incluons le nom d'utilisateur et la date d'expiration)
-    payload = {"sub": username, "exp": expiration}
-
-    # Créer le jeton JWT en signant la charge utile avec la clé secrète
-    token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
-
-    # Retourner le jeton en tant que chaîne de caractères
-    return token
-
-
+  req = requests.get(f'{url_api}{way}')
+  wb = req.json()
+  return wb
 
 # Endpoint pour la connexion
 
@@ -49,34 +33,41 @@ async def login(username: str, password: str, token: str):
 
      return "access to API ok"
 
-@app.post("/create_user")
-async def create_user(username: str, password: str, role: str):
-
-    # Générer un jeton pour l'utilisateur
-    token = generate_token(username)
-
-    # Insérer l'user dans la db
-    db.insert(username, password, role, token)
 
 
 # Endpoint protégé par un jeton
-@app.get("/data")
-async def protected_data(credentials: HTTPAuthorizationCredentials = Depends(security)):
-    try:
-        # Extraire le jeton JWT de l'en-tête d'autorisation
-        token = credentials.credentials
-
-        # Décoder et vérifier le jeton JWT
-        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
-
-        # Vérifier que le jeton n'a pas expiré
-        expiration = datetime.fromtimestamp(payload["exp"])
-        if datetime.utcnow() > expiration:
-            raise HTTPException(status_code=401, detail="Le jeton d'authentification a expiré")
+@app.get("/customers")
+async def protected_data_customers(token_data: TokenData = Depends(secure.verify_jwt_token)):
 
         # Renvoyer les données protégées
-        return {"data": "Ceci sont des données protégées!"}
 
-    except jwt.JWTError:
-        raise HTTPException(status_code=401, detail="Jeton d'authentification invalide")
+        return {"data": "Ceci sont des données protégées!"},api('https://615f5fb4f7254d0017068109.mockapi.io/api/v1','/customers')
 
+
+@app.get("/orders")
+async def protected_data_orders(id:str, token_data: TokenData = Depends(secure.verify_jwt_token)):
+
+        # Renvoyer les données protégées
+
+      try :
+
+        return {"data": f"Ceci sont des données protégées!"},api('https://615f5fb4f7254d0017068109.mockapi.io/api/v1',f'/customers/{id}/orders')
+
+      except :
+
+        return {"data": "custumer_id do not exists !"}
+
+
+
+@app.get("/products")
+async def protected_data_products(customer_id:str, order_id:str,token_data: TokenData = Depends(secure.verify_jwt_token)):
+
+        # Renvoyer les données protégées
+
+      try :
+
+        return {"data": f"Ceci sont des données protégées!"},api('https://615f5fb4f7254d0017068109.mockapi.io/api/v1',f'/customers/{customer_id}/orders/{order_id}/products')
+
+      except :
+
+        return {"data": "custumer_id or order_id do not exists !"}
