@@ -1,4 +1,4 @@
-from argon2 import PasswordHasher
+import argon2
 import jwt as pyjwt
 import jwt
 from pydantic import BaseModel
@@ -59,7 +59,7 @@ def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
     raise HTTPException(status_code=401, detail="Invalid JWT token")
 
 def hash_pwd(pwd: str) -> str:
-    ph = PasswordHasher()
+    ph = argon2.PasswordHasher()
     return ph.hash(pwd)
 
 
