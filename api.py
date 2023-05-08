@@ -20,18 +20,6 @@ def api(url_api,way):
   wb = req.json()
   return wb
 
-# Endpoint pour la connexion
-
-@app.get("/login")
-async def login(username: str, password: str, token: str):
-
-     pwd_in_db, token_in_db = db.get_user_token(username)
-
-    # Vérifier que les informations d'identification sont valides
-     if password != pwd_in_db or token!= token_in_db:
-        raise HTTPException(status_code=401, detail="Nom d'utilisateur ou mot de passe incorrect")
-
-     return "access to API ok"
 
 
 

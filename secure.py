@@ -12,7 +12,7 @@ class TokenData(BaseModel):
 
 
 # Clé secrète pour signer les jetons JWT
-SECRET_KEY = ""
+SECRET_KEY = os.environ['JWT_SECRET_KEY']
 
 # Durée de validité du jeton (nous utilisons timedelta pour que nous puissions facilement ajouter ou soustraire du temps)
 TOKEN_EXPIRATION_TIME = timedelta(days=7)
