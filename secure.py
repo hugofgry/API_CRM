@@ -33,6 +33,8 @@ def generate_token(username: str) -> str:
     return token
 
 def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
+  print(authorization)
+
 
   try:
 
