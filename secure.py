@@ -3,12 +3,16 @@ import jwt as pyjwt
 from pydantic import BaseModel
 from datetime import datetime, timedelta
 from fastapi import FastAPI, Depends, HTTPException, Header
+import os
+
 
 class TokenData(BaseModel):
   sub: str
 
+
+
 # Clé secrète pour signer les jetons JWT
-SECRET_KEY = "votre_clé_secrète"
+SECRET_KEY = os.env['JWT_SECRET_KEY']
 
 # Durée de validité du jeton (nous utilisons timedelta pour que nous puissions facilement ajouter ou soustraire du temps)
 TOKEN_EXPIRATION_TIME = timedelta(days=7)
