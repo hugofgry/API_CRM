@@ -18,6 +18,7 @@ def generate_token(username: str) -> str:
 
 def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
     try:
+      print("secret key :"+SECRET_KEY)
         token = authorization.split(" ")[1]
         payload = pyjwt.decode(token, SECRET_KEY, algorithms="HS256")
         user_id = payload.get("sub")
@@ -42,4 +43,3 @@ def verify_pwd(user_pwd: str, hashed_pwd: str) -> bool:
     except argon2.exceptions.VerifyMismatchError:
         return False
 
-print(SECRET_KEY)
