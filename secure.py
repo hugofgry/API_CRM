@@ -9,7 +9,7 @@ import os
 class TokenData(BaseModel):
     sub: str
 
-SECRET_KEY = 'y7064408cc833249f9a56d058771a24a00da14e1f90169e5ed5ee5b8ce2a888df'
+SECRET_KEY = os.environ['JWT_SECRET_KEY']
 
 def generate_token(username: str) -> str:
     payload = {"sub": username}
