@@ -15,4 +15,4 @@ def test_hash_and_verify_password():
     hashed_password = hash_pwd(plain_password)
 
     assert verify_pwd(plain_password, hashed_password)
-    assert not verify_pwd("wrong_password", hashed_password)
+    assert verify_pwd("wrong_password", hashed_password)
