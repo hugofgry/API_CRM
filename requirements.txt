@@ -7,3 +7,5 @@ fastapi
 fastapi.security
 requests
 uvicorn
+pytest
+httpx
