@@ -24,21 +24,21 @@ jobs:
         uvicorn api:app --host 127.0.0.1 --port 8080 &
         echo "API_PID=$!" >> $GITHUB_ENV
       env:
-        TOKEN: ${{ secrets.TOK }}
+        TOK: ${{ secrets.TOK }}
         JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
 
     - name: Print JWT_SECRET_KEY variable
       run: |
         echo "TOK: $TOK"
       env:
-        TOKEN: ${{ secrets.TOK }}
+        TOK: ${{ secrets.TOK }}
 
     - name: Run tests
       run: |
 
         pytest
       env:
-        TOKEN: ${{ secrets.TOK }}
+        TOK: ${{ secrets.TOK }}
         JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
 
     - name: Stop API server
