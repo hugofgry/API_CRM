@@ -1,4 +1,5 @@
 from argon2 import PasswordHasher
+import argon2
 import jwt as pyjwt
 from pydantic import BaseModel
 from datetime import datetime, timedelta
