@@ -10,6 +10,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Print variable
+      run: echo "Ma variable est: ${{ env.TOKEN }}"
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
