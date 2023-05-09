@@ -10,6 +10,7 @@ class TokenData(BaseModel):
     sub: str
 
 SECRET_KEY = os.environ['JWT_SECRET_KEY']
+print(SECRET_KEY)
 
 def generate_token(username: str) -> str:
     payload = {"sub": username}
@@ -42,3 +43,4 @@ def verify_pwd(user_pwd: str, hashed_pwd: str) -> bool:
         return True
     except argon2.exceptions.VerifyMismatchError:
         return False
+
