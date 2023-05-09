@@ -56,6 +56,6 @@ def test_invalid_token():
     response_orders = httpx.get(f"{API_BASE_URL}/orders?id=1", headers=headers)
     response_products = httpx.get(f"{API_BASE_URL}/products?customer_id=1&order_id=1", headers=headers)
 
-    assert response_customers.status_code == 500
-    assert response_orders.status_code == 500
-    assert response_products.status_code == 500
+    assert response_customers.status_code == 401
+    assert response_orders.status_code == 401
+    assert response_products.status_code == 401
