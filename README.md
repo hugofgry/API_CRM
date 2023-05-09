@@ -99,10 +99,14 @@ argon2-cffi
 
 ## Fonctionnalités du projet
 
-1.Protection des données sensibles avec des tokens JWT \n
-2.Routes /customers, /orders et /products \n
-3.Fonctions d'authentification et de sécurité dans secure.py \n
-4.Tests unitaires dans test_api.py et test_secure.py \n
+1.Protection des données sensibles avec des tokens JWT  
+
+2.Routes /customers, /orders et /products  
+
+3.Fonctions d'authentification et de sécurité dans secure.py
+
+4.Tests unitaires dans test_api.py et test_secure.py 
+
 5.Déploiement automatique sur Heroku avec le fichier ci.yaml 
 
 ## Résumé
