@@ -1,7 +1,7 @@
 import pytest
 import httpx
 
-API_BASE_URL = "https://apiepsicrm.herokuapp.com"
+API_BASE_URL = "http://0.0.0.0:8000"
 
 def test_customers():
 
