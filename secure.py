@@ -26,7 +26,7 @@ def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
             raise HTTPException(status_code=401, detail="Invalid JWT token")
 
         return TokenData(sub=user_id)
-    except pyjwt.JWTError:
+    except (pyjwt.JWTError, IndexError):
         raise HTTPException(status_code=401, detail="Invalid JWT token")
 
 def hash_pwd(pwd: str) -> str:
