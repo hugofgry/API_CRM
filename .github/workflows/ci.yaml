@@ -27,10 +27,6 @@ jobs:
         TOK: ${{ secrets.TOK }}
         JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
 
-      env:
-        TOK: ${{ secrets.TOK }}
-        JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
-
     - name: Run tests
       run: |
         pytest
