@@ -21,7 +21,7 @@ def api(endpoint: str) -> dict:
 
 @app.get("/customers")
 async def protected_data_customers(token_data: TokenData = Depends(secure.verify_jwt_token)):
-    return {"data": "Ceci sont des données protégées!"}, api("/customers")
+return {"data": "Ceci sont des données protégées!"}, api("/customers")
 
 
 @app.get("/orders")
