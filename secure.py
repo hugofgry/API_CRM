@@ -15,9 +15,7 @@ class TokenData(BaseModel):
 
 # Clé secrète pour signer les jetons JWT
 SECRET_KEY = os.environ['JWT_SECRET_KEY']
-# SECRET_KEY = "7064408cc833249f9a56d058771a24a00da14e1f90169e5ed5ee5b8ce2a888df"
-print(" Secret key lue sur heroku :" + SECRET_KEY)
-print("secret key utilise pour encoder :7064408cc833249f9a56d058771a24a00da14e1f90169e5ed5ee5b8ce2a888df")
+
 
 
 
