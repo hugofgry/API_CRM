@@ -1,6 +1,6 @@
 psycopg2
 datetime
-jwt==1.2.0
+pyjwt
 argon2
 pydantic 
 fastapi
