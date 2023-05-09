@@ -18,7 +18,7 @@ def generate_token(username: str) -> str:
 
 def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
     try:
-      print("secret key :"+SECRET_KEY)
+        print("secret key :"+SECRET_KEY)
         token = authorization.split(" ")[1]
         payload = pyjwt.decode(token, SECRET_KEY, algorithms="HS256")
         user_id = payload.get("sub")
