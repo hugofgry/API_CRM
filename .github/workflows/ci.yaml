@@ -24,14 +24,15 @@ jobs:
         uvicorn api:app --host 127.0.0.1 --port 8080 &
         echo "API_PID=$!" >> $GITHUB_ENV
       env:
-        TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
+        TOKEN: ${{ secrets.TOKEN }}
         JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
 
     - name: Run tests
       run: |
         pytest
       env:
-        TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
+        TOKEN: ${{ secrets.TOKEN }}
+        JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
 
     - name: Stop API server
       run: |
