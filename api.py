@@ -58,3 +58,7 @@ async def protected_data_products(customer_id:str, order_id:str,token_data: Toke
 
         return {"data": "custumer_id or order_id do not exists !"}
 
+
+@app.get("/hello")
+async def protected_data_customers():
+  return 'hel'
