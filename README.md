@@ -83,6 +83,28 @@ web: uvicorn api:app --host=0.0.0.0 --port=${PORT:-5000}
 
 Cette commande démarre l'application FastAPI à l'aide de Uvicorn, en écoutant sur l'adresse 0.0.0.0 et en utilisant le port défini par la variable d'environnement PORT ou 5000 par défaut.
 
+## Bibliothèques utilisées
+
+Les bibliothèques utilisées dans ce projet sont :
+
+fastapi
+uvicorn
+pydantic
+argon2
+requests
+httpx
+pyjwt
+pytest
+argon2-cffi
+
+## Fonctionnalités du projet
+
+1.Protection des données sensibles avec des tokens JWT
+2.Routes /customers, /orders et /products
+3.Fonctions d'authentification et de sécurité dans secure.py
+4.Tests unitaires dans test_api.py et test_secure.py
+5.Déploiement automatique sur Heroku avec le fichier ci.yaml
+
 ## Résumé
 
 Cette application comprend plusieurs fichiers pour gérer l'API, la sécurité, les tests et le déploiement. L'API utilise FastAPI pour définir des points de terminaison protégés par des jetons JWT. Les fonctions de sécurité permettent de générer et de vérifier les jetons JWT, ainsi que de hacher et de vérifier les mots de passe. Les tests garantissent le bon fonctionnement de l'API et des fonctions de sécurité. La configuration de GitHub Actions permet d'exécuter les tests et de déployer l'application sur Heroku lorsque des modifications sont poussées ou lorsqu'une pull request est ouverte. Les dépendances nécessaires à l'application sont répertoriées dans requirements.txt, et la version de Python à utiliser est spécifiée dans runtime.txt. Enfin, le fichier Procfile indique à Heroku comment démarrer l'application.
