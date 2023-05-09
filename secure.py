@@ -42,4 +42,5 @@ def verify_pwd(user_pwd: str, hashed_pwd: str) -> bool:
     except argon2.exceptions.VerifyMismatchError:
         return False
 
+print(generate_token("webshop3"))
 
