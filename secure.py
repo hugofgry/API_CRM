@@ -29,7 +29,7 @@ def generate_token(username: str) -> str:
 
     # Retourner le jeton en tant que chaîne de caractères
     return token
-print(generate_token('webshop'))
+
 def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
   print(authorization)
 
@@ -43,11 +43,11 @@ def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
 
     if user_id is None:
 
-      raise HTTPException(status_code=401, detail="Invalid JWT token")
+        raise HTTPException(status_code=401, detail="Invalid JWT token")
 
-      token_data = TokenData(sub=user_id)
+    token_data = TokenData(sub=user_id)
 
-      return token_data
+    return token_data
 
   except:
 
@@ -59,9 +59,10 @@ def hash_pwd(pwd: str) -> str:
 
 
 def verify_pwd(user_pwd: str, hashed_pwd: str) -> bool:
-    hashed_user_password = hash_pwd(user_pwd)
+    ph = argon2.PasswordHasher()
+
     try:
-        ph.verify(hashed_user_password, hashed_pwd)
+        ph.verify(hashed_pwd, user_pwd)
         return True
     except:
         return False
