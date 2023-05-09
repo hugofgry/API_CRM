@@ -67,5 +67,5 @@ def verify_pwd(user_pwd: str, hashed_pwd: str) -> bool:
     except:
         return False
 
-print('hugo')
+
 
