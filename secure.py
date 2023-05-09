@@ -27,7 +27,7 @@ def verify_jwt_token(authorization: str = Header(...)) -> TokenData:
 
         return TokenData(sub=user_id)
 
-    except :
+    except Exception as exception:
         print(exception)
 
 def hash_pwd(pwd: str) -> str:
