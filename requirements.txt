@@ -9,3 +9,4 @@ requests
 uvicorn
 pytest
 httpx
+argon2-cffi
