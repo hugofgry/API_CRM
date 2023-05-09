@@ -27,12 +27,6 @@ jobs:
         TOK: ${{ secrets.TOK }}
         JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
 
-    - name: Print JWT_SECRET_KEY variable
-      run: |
-        echo "TOK: $TOK"
-      env:
-        TOK: ${{ secrets.TOK }}
-
     - name: Run tests
       run: |
 
