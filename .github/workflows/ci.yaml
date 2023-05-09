@@ -39,4 +39,23 @@ jobs:
       run: |
         kill $API_PID
 
-#dfd
+    - name: Set up Heroku CLI
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install Heroku CLI
+      run: |
+        curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+    - name: Login to Heroku
+      run: |
+        heroku login -i
+        heroku container:login
+      env:
+        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+    - name: Build and push Docker container to Heroku
+      run: |
+        heroku container:push -a apiepsicrm web
+        heroku container:release -a apiepsicrm web
+      env:
+        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+
