@@ -34,6 +34,6 @@ jobs:
         TOKEN: ${{ secrets.TOKEN }}
         JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
 
-    - name: Stop API server
+    - name: Stop API servers
       run: |
         kill $API_PID
