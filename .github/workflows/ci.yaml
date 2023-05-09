@@ -48,11 +48,11 @@ jobs:
         curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
     - name: Login to Heroku
-        uses: akhileshns/heroku-deploy@v3.12.12 # Utilisation du plug-in Heroku Actions
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: "apiepsicrm"
-          heroku_email: "hugo.fugeray@gmail.com"
+      uses: akhileshns/heroku-deploy@v3.12.12 # Utilisation du plug-in Heroku Actions
+      with:
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        heroku_app_name: "apiepsicrm"
+        heroku_email: "hugo.fugeray@gmail.com"
 
       - name: Deploy to Heroku
         run: |
