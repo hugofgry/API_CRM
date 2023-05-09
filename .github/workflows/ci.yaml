@@ -10,11 +10,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Print variable
-      run: echo "Ma variable est: ${{ env.TOKEN }}"
-      env:
-        TOKEN: ${{ secrets.TOKEN }}
-
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -31,6 +26,12 @@ jobs:
       env:
         TOKEN: ${{ secrets.TOKEN }}
         JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
+
+    - name: Print TOKEN variable
+      run: |
+        echo "TOKEN: $TOKEN"
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
 
     - name: Run tests
       run: |
