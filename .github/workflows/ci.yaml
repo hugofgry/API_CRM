@@ -46,16 +46,16 @@ jobs:
     - name: Install Heroku CLI
       run: |
         curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
     - name: Login to Heroku
-      run: |
-        heroku login -i
-        heroku container:login
-      env:
-        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
-    - name: Build and push Docker container to Heroku
-      run: |
-        heroku container:push -a apiepsicrm web
-        heroku container:release -a apiepsicrm web
-      env:
-        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+        uses: akhileshns/heroku-deploy@v3.12.12 # Utilisation du plug-in Heroku Actions
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: "apiepsicrm"
+          heroku_email: "hugo.fugeray@gmail.com"
+
+      - name: Deploy to Heroku
+        run: |
+          heroku git:remote -a apiepsicrm
+          git push heroku main
 
