@@ -2,7 +2,7 @@ import os
 import subprocess
 
 def run_tests():
-    result = subprocess.run(["pytest"], capture_output=True, text=True)
+    result = subprocess.run(["pytest", "--rootdir", "./", "--junitxml=test-report.xml"], capture_output=True, text=True)
     print(result.stdout)
     print(result.stderr)
 
