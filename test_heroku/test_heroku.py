@@ -1,9 +1,8 @@
 import os
 
-os.chdir('..')
-
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+test_dir = os.path.join(root_dir, "tests")
+sys.path.append(api_dir)
 
 
 
