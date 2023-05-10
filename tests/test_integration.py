@@ -1,8 +1,11 @@
 import pytest
 import httpx
 from fastapi import HTTPException
-
+import os
+import sys
 ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(ROOT_DIR)
+
 from api import api
 
 
