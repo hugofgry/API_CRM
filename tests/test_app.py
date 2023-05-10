@@ -18,7 +18,7 @@ def test_orders():
 
     id = 8  # Un exemple d'ID valide
     headers = {"Authorization": f"Bearer {token}"}
-    response = httpx.get(f"{API_BASE_URL}/orders?id={id}", headers=headers)
+    response = httpx.get(f"{API_BASE_URL}/customers/{id}/orders/", headers=headers)
     assert response.status_code == 200
 
 def test_products():
@@ -27,7 +27,7 @@ def test_products():
     order_id = 8  # Un exemple d'ID de commande valide
     headers = {"Authorization": f"Bearer {token}"}
     response = httpx.get(
-        f"{API_BASE_URL}/products?customer_id={customer_id}&order_id={order_id}",
+        f"{API_BASE_URL}/customers/{customer_id}/orders/{order_id}/products",
         headers=headers,
     )
     assert response.status_code == 200

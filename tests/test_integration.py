@@ -20,7 +20,7 @@ def test_api_call_success_customers():
 
 def test_api_call_success_order():
 
-    endpoint = f"/orders?id=8"  # Utilisez un endpoint valide pour les tests
+    endpoint = "/customers/8/orders/"  # Utilisez un endpoint valide pour les tests
     response_data = api(endpoint)
 
     assert response_data is not None
@@ -29,7 +29,7 @@ def test_api_call_success_order():
 def test_api_call_success_product():
 
 
-    endpoint = f"/products?customer_id=8&order_id=8"  # Utilisez un endpoint valide pour les tests
+    endpoint = f"/customers/8/orders/8/products"  # Utilisez un endpoint valide pour les tests
     response_data = api(endpoint)
 
     assert response_data is not None
