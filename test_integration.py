@@ -19,7 +19,7 @@ def test_api_call_success_order():
     assert response_data is not None
     assert isinstance(response_data, list)
 
-def test_api_call_success_order():
+def test_api_call_success_product():
 
     customer_id = 8
     order_id = 8
