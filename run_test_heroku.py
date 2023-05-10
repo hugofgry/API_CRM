@@ -43,11 +43,11 @@ def run_tests():
         subject = "Test success"
         body = f"Tests failed:\n\n{result.stdout}\n{result.stderr}"
         send_email(subject, body, from_email, to_email, password)
+
     print(result.stdout)
     print(result.stderr)
 
 
-    if result.returncode != 0:
 
 
 if __name__ == "__main__":
