@@ -2,6 +2,10 @@ import os
 
 os.chdir('..')
 
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
+
+
 
 import test_app
 import test_integration
