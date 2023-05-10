@@ -1,7 +1,10 @@
 import pytest
 import httpx
-from api import api
 from fastapi import HTTPException
+
+ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
+from api import api
+
 
 def test_api_call_success_customers():
     endpoint = "/customers"  # Utilisez un endpoint valide pour les tests
