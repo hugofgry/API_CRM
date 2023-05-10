@@ -1,9 +1,10 @@
 import os
 import sys
-parent_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
+script_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# ajouter le chemin absolu du répertoire parent au chemin de recherche Python
-sys.path.append(parent_dir)
+# Ajouter le chemin absolu à sys.path
+sys.path.insert(0, script_path)
+
 
 
 from secure import generate_token, verify_jwt_token, hash_pwd, verify_pwd

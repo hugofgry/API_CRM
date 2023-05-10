@@ -3,10 +3,11 @@ import httpx
 from fastapi import HTTPException
 import os
 import sys
-parent_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
+script_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Ajouter le chemin absolu à sys.path
+sys.path.insert(0, script_path)
 
-sys.path.append(parent_dir)
 
 from api import api
 
