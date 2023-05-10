@@ -27,6 +27,7 @@ def run_tests():
     result = subprocess.run(["pytest", test_file, f"--rootdir={root_dir}"], capture_output=True, text=True)
     print(result.stdout)
     print(result.stderr)
+    send_email_on_failure()
 
     if result.returncode != 0:
         send_email_on_failure()
