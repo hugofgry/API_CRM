@@ -29,7 +29,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest tests.py
+        pytest run_tests.py
       env:
         TOK: ${{ secrets.TOK }}
         JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
