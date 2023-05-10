@@ -5,11 +5,12 @@ root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 test_dir = os.path.join(root_dir, "tests")
 sys.path.append(test_dir)
 
-
-
 import test_app
 import test_integration
 import test_secure
+
+token = os.environ['TOK']
+
 
 API_BASE_URL = test_app.base('heroku')
 
