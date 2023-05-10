@@ -64,6 +64,7 @@ jobs:
         heroku_app_name: "apiepsicrm"
         heroku_email: "hugo.fugeray@gmail.com"
     - name: Deploy to Heroku
+      if: github.ref == 'refs/heads/main'
       run: |
         heroku git:remote -a apiepsicrm
         git push heroku main
