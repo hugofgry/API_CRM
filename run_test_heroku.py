@@ -2,6 +2,9 @@ import smtplib
 from email.mime.text import MIMEText
 import os
 import subprocess
+import os
+
+
 
 root_dir = os.path.abspath(os.path.dirname(__file__))
 test_dir = os.path.join(root_dir, "test_heroku")
@@ -28,18 +31,18 @@ def run_tests():
     result = subprocess.run(["pytest", test_file, f"--rootdir={root_dir}"], capture_output=True, text=True)
 
     if result.returncode != 0:
-        from_email = "payatonkawadeveloppeurs@gmail.com"
-        to_email = "hugo.fugeray@gmail.com"
-        password = "mxihxxyfggmscqyb"
+        from_email = os.environ['MAIL']
+        to_email = os.environ['MAIL_TO']
+        password = os.environ['MAIL_PWD']
         subject = "Test Failure"
         body = f"Tests failed:\n\n{result.stdout}\n{result.stderr}"
         send_email(subject, body, from_email, to_email, password)
 
     else:
         print("All tests passed")
-        from_email = "payatonkawadeveloppeurs@gmail.com"
-        to_email = "hugo.fugeray@gmail.com"
-        password = "mxihxxyfggmscqyb"
+        from_email = os.environ['MAIL']
+        to_email = os.environ['MAIL_TO']
+        password = os.environ['MAIL_PWD']
         subject = "Test success"
         body = f"Tests success:\n\n{result.stdout}\n{result.stderr}"
         send_email(subject, body, from_email, to_email, password)
