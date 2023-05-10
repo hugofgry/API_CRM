@@ -11,9 +11,13 @@ def base(env):
 
     API_BASE_URL = "http://127.0.0.1:8080"
 
+    return API_BASE_URL
+
   else :
 
     API_BASE_URL = "https://apiepsicrm.herokuapp.com"
+
+    return API_BASE_URL
 
 API_BASE_URL = base('github')
 
