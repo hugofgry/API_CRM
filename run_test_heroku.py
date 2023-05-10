@@ -41,7 +41,7 @@ def run_tests():
         to_email = "hugo.fugeray@gmail.com"
         password = "mxihxxyfggmscqyb"
         subject = "Test success"
-        body = f"Tests failed:\n\n{result.stdout}\n{result.stderr}"
+        body = f"Tests success:\n\n{result.stdout}\n{result.stderr}"
         send_email(subject, body, from_email, to_email, password)
 
     print(result.stdout)
