@@ -29,7 +29,8 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest run_tests.py
+        pytest --ignore=run_test_heroku.py
+
       env:
         TOK: ${{ secrets.TOK }}
         JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
