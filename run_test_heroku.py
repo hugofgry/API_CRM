@@ -30,7 +30,7 @@ def run_tests():
     if result.returncode != 0:
         from_email = "payatonkawadeveloppeurs@gmail.com"
         to_email = "hugo.fugeray@gmail.com"
-        password = "PayeTonKawa33000!"
+        password = "mxihxxyfggmscqyb!"
         subject = "Test Failure"
         body = f"Tests failed:\n\n{result.stdout}\n{result.stderr}"
         send_email(subject, body, from_email, to_email, password)
@@ -39,7 +39,7 @@ def run_tests():
         print("All tests passed")
         from_email = "payatonkawadeveloppeurs@gmail.com"
         to_email = "hugo.fugeray@gmail.com"
-        password = "PayeTonKawa33000!"
+        password = "mxihxxyfggmscqyb!"
         subject = "Test success"
         body = f"Tests failed:\n\n{result.stdout}\n{result.stderr}"
         send_email(subject, body, from_email, to_email, password)
