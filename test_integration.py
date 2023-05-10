@@ -6,5 +6,5 @@ def test_call_external_api():
     endpoint = "/customers"  # Utilisez un endpoint valide pour les tests
     response = api(endpoint)
 
-    assert response.status_code == 200
-    assert "data" in response.json()
+    assert response == 200
+    assert "data" in response
