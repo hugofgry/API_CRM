@@ -1,3 +1,8 @@
+import os
+
+os.chdir('..')
+
+
 import test_app
 import test_integration
 import test_secure
