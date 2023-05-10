@@ -1,8 +1,11 @@
 import os
 import subprocess
 
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+test_dir = os.path.join(root_dir, "run.test_heroku.py")
+
 def run_tests():
-    result = subprocess.run(["pytest", "test_heroku.py"], capture_output=True, text=True)
+    result = subprocess.run(["pytest",test_dir,f"--rootdir={root_dir}"], capture_output=True, text=True)
     print(result.stdout)
     print(result.stderr)
 
