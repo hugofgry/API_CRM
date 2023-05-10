@@ -8,7 +8,6 @@ script_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Ajouter le chemin absolu à sys.path
 sys.path.insert(0, script_path)
 
-
 from api import api
 
 
@@ -22,7 +21,7 @@ def test_api_call_success_customers():
 def test_api_call_success_order():
 
     id = 8
-    endpoint = "/orders?id={id}"  # Utilisez un endpoint valide pour les tests
+    endpoint = f"/orders?id={id}"  # Utilisez un endpoint valide pour les tests
     response_data = api(endpoint)
 
     assert response_data is not None
@@ -32,7 +31,7 @@ def test_api_call_success_product():
 
     customer_id = 8
     order_id = 8
-    endpoint = "/products?customer_id={customer_id}&order_id={order_id}"  # Utilisez un endpoint valide pour les tests
+    endpoint = f"/products?customer_id={customer_id}&order_id={order_id}"  # Utilisez un endpoint valide pour les tests
     response_data = api(endpoint)
 
     assert response_data is not None
