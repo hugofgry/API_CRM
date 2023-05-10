@@ -10,3 +10,4 @@ uvicorn
 pytest
 httpx
 argon2-cffi
+sendgrid
