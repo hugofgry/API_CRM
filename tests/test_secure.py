@@ -1,7 +1,10 @@
 import os
 import sys
-ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
-sys.path.append(ROOT_DIR)
+parent_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
+
+# ajouter le chemin absolu du répertoire parent au chemin de recherche Python
+sys.path.append(parent_dir)
+
 
 from secure import generate_token, verify_jwt_token, hash_pwd, verify_pwd
 import pytest

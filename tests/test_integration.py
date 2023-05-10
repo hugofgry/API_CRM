@@ -3,8 +3,10 @@ import httpx
 from fastapi import HTTPException
 import os
 import sys
-ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
-sys.path.append(ROOT_DIR)
+parent_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
+
+
+sys.path.append(parent_dir)
 
 from api import api
 
