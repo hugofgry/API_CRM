@@ -1,21 +1,9 @@
-import pytest
-import httpx
-import os
+import test_app
+import test_integration
+import test_secure
 
-token = os.environ['TOK']
+API_BASE_URL = test_app.base('heroku')
 
-
-def base(env):
-
-  if env=='github' :
-
-    API_BASE_URL = "http://127.0.0.1:8080"
-
-  else :
-
-    API_BASE_URL = "https://apiepsicrm.herokuapp.com"
-
-API_BASE_URL = base('github')
 
 def test_customers():
 
@@ -73,6 +61,3 @@ def test_invalid_token():
     assert response_customers.status_code == 401
     assert response_orders.status_code == 401
     assert response_products.status_code == 401
-
-
-#HDHDCJd
