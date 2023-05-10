@@ -1,3 +1,4 @@
+import os
 ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 from secure import generate_token, verify_jwt_token, hash_pwd, verify_pwd
 import pytest
