@@ -4,7 +4,7 @@ import secure
 import requests
 from secure import TokenData
 
-#fffÒ
+
 app = FastAPI()
 security = HTTPBearer()
 
