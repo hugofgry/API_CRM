@@ -12,7 +12,7 @@ from api import api
 
 
 def test_api_call_success_customers():
-    endpoint = "/customers"  # Utilisez un endpoint valide pour les tests
+    endpoint = "/customers"
     response_data = api(endpoint)
 
     assert response_data is not None
@@ -20,7 +20,7 @@ def test_api_call_success_customers():
 
 def test_api_call_success_order():
 
-    endpoint = "/customers/8/orders/"  # Utilisez un endpoint valide pour les tests
+    endpoint = "/customers/8/orders/"
     response_data = api(endpoint)
 
     assert response_data is not None
@@ -29,15 +29,15 @@ def test_api_call_success_order():
 def test_api_call_success_product():
 
 
-    endpoint = f"/customers/8/orders/8/products"  # Utilisez un endpoint valide pour les tests
+    endpoint = f"/customers/8/orders/8/products"
     response_data = api(endpoint)
 
     assert response_data is not None
     assert isinstance(response_data, list)
 
 def test_api_call_failure():
-    invalid_endpoint = "/invalid/endpoint"  # Utilisez un endpoint non valide pour les tests
 
+    invalid_endpoint = "/invalid/endpoint"
     with pytest.raises(HTTPException) as exc_info:
         api(invalid_endpoint)
 

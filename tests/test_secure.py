@@ -2,7 +2,7 @@ import os
 import sys
 script_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Ajouter le chemin absolu à sys.path
+
 sys.path.insert(0, script_path)
 
 
@@ -14,7 +14,7 @@ def test_generate_and_verify_token():
     username = "webshop"
     token = generate_token(username)
 
-    # Utilisez verify_jwt_token pour vérifier le jeton généré
+
     token_data = verify_jwt_token(f"Bearer {token}")
 
     assert token_data.sub == username
